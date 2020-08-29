@@ -1,0 +1,17 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  ping: String! @juniper(ownership: "owned")
+}
+
+type Mutation {
+  foo(input: FooInput!): String! @juniper(ownership: "owned")
+}
+
+input FooInput {
+  bar: String!
+  baz: Int!
+}
